@@ -1,0 +1,17 @@
+
+
+body{
+    background-color:antiquewhite;
+    font-family: sans-serif;
+    height: 100vh;
+}
+
+header{
+    width: 100%;
+}
+
+main{
+    height: 90vh;
+    display: grid;
+    place-content: center;
+}
