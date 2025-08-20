@@ -4,18 +4,18 @@ const $btnSortear = document.getElementById('btnSortear');
 
 // Lista donde van a ir los nombres
 const lista = [];
+const cantidadGanadores = 3;
 
 
-// Botón que nos permite agregar un nombre la lista
-$btnAgregar.addEventListener('click', ()=>{
+// Botón para agregar un nombre la lista
+$btnAgregar.addEventListener('click', ()=> agregarNombre() );
 
-    agregarNombre();
-
-});
-
+//Botón para realizar el sorteo
+$btnSortear.addEventListener('click', () => sortear(lista, cantidadGanadores));
 
 
-// Funcion para validar que el tipo de dato sea un string sin números, que no este vacio y que no se ingrese otro tipo de dato.
+
+// Valida que el campo no este vacio y que sea un string
 const validarStrig = (string) => {
 
     if(typeof string !== 'string') return console.error('El valor ingresado es incorrecto.');
@@ -27,7 +27,7 @@ const validarStrig = (string) => {
 
 
 
-// Funcion para agregar nombres a la lista.
+// Agregar los nombres a la lista.
 function agregarNombre () {
 
     const nombre = document.getElementById('inputNombre').value;
@@ -47,10 +47,12 @@ function agregarNombre () {
 
 
 
-// Funcion para actualizar la lista en el Html.
+// Actualiza la lista en el Html.
 function actulizarLista(lista) {
 
     const $listaHtml = document.getElementById('listaHtml');
+
+    // limpiar antes de volver a renderizar
     $listaHtml.innerHTML = '';
 
     // Si la lista tiene un nombre o más, la genera en el html.
@@ -64,7 +66,7 @@ function actulizarLista(lista) {
             $fragment = document.createDocumentFragment();
             
 
-        // Agrega cada elemento a la lista Html
+        // Genera los li de la ul
         lista.forEach(el => {
             
             const $li = document.createElement("li");
@@ -73,12 +75,49 @@ function actulizarLista(lista) {
         });
 
 
-
             $listaHtml.appendChild($h2);
             $listaHtml.appendChild($ul);
             $ul.appendChild($fragment);
 
     }
+
+}
+
+
+// Genera un número aleatorio
+function aleatorio(lista){
+    return Math.floor(Math.random() * lista.length);
+}
+
+
+function sortear(lista, cantidadGanadores){
+    
+
+    if( lista.length > cantidadGanadores){
+
+        const indices = new Set();
+
+        while(indices.size < cantidadGanadores){
+
+            indices.add(aleatorio(lista));
+        }
+        console.log(indices);
+
+
+        let ganadores = [...indices].map(i => lista[i]);
+       
+        for(let i = 0; i < cantidadGanadores; i++){
+
+            console.log(`Ganador ${i + 1}: ${ganadores[i]}`);
+        }
+
+
+    }else{
+
+        console.error(`Debe haber más de ${cantidadGanadores} nombres en la lista.`)
+    };
+
+    
 
 }
 
