@@ -1,27 +1,32 @@
 const $btnAgregar = document.getElementById('btnAgregar');
+const $btnVaciarLista = document.getElementById('btnVaciarLista');
 const $btnSortear = document.getElementById('btnSortear');
 
-
-// Lista donde van a ir los nombres
-const lista = [];
+// Cantidad de ganadores
 const cantidadGanadores = 3;
+// Inicialización de lista de nombre
+let lista = [];
 
-
-// Botón para agregar un nombre la lista
+// Botón para agregar un nombre la lista.
 $btnAgregar.addEventListener('click', ()=> agregarNombre() );
 
-//Botón para realizar el sorteo
+//Botón para realizar el sorteo.
 $btnSortear.addEventListener('click', () => sortear(lista, cantidadGanadores));
 
 
+// Valida la lista.
+const validarLista = (lista) => {
 
-// Valida que el campo no este vacio y que sea un string
-const validarStrig = (string) => {
+    //Valida que la lista no esté vacia.
+    if(lista.length === 0) return console.error('La lista de nombres esta vacia.')
 
-    if(typeof string !== 'string') return console.error('El valor ingresado es incorrecto.');
-    if(string.trim().length === 0) return console.warn('No ingreso un nombre.');
-    if(/\d/.test(string)) return console.error('No debe tener números.');
+    //Valida que el nombre no sea un número o que no contenga números.    
+    lista.find( el => {
 
+        if(/\d/.test(el)) return console.error('El nombre NO debe tener números.');
+
+    })
+ 
     return true;
 };
 
@@ -30,19 +35,19 @@ const validarStrig = (string) => {
 // Agregar los nombres a la lista.
 function agregarNombre () {
 
-    const nombre = document.getElementById('inputNombre').value;
+    const $nombres = document.getElementById('textareaNombre').value;
 
-    // Si el nombre es valido, lo agrega a la lista.
-    if(validarStrig(nombre)){
+    //El string que recibe de textarea lo pasa a un arreglo, tomando "\n" y "," para separar las palabras.
+    lista = $nombres.split(/[\n,]+/).map(el => el.trim()).filter(Boolean);
 
-        document.getElementById('inputNombre').value = '';
+    // Si la lista es valida, la acutualiza en el Html y retorna la lista
+    if(validarLista(lista)){
 
-        lista.push(nombre);
-        console.log(lista)
         actulizarLista(lista);
-        
+
         return lista;
     }
+    
 }
 
 
@@ -66,7 +71,7 @@ function actulizarLista(lista) {
             $fragment = document.createDocumentFragment();
             
 
-        // Genera los li de la ul
+        // Genera los li de la ul.
         lista.forEach(el => {
             
             const $li = document.createElement("li");
@@ -84,28 +89,37 @@ function actulizarLista(lista) {
 }
 
 
+
+
+
 // Genera un número aleatorio
 function aleatorio(lista){
     return Math.floor(Math.random() * lista.length);
 }
 
 
+// Sorte el ganador o los ganadores
 function sortear(lista, cantidadGanadores){
     
 
     if( lista.length > cantidadGanadores){
 
+        // Guarda indices únicos.
         const indices = new Set();
 
+        // Genera indices únicos, para que no se repitan los ganadores.
         while(indices.size < cantidadGanadores){
 
             indices.add(aleatorio(lista));
-        }
-        console.log(indices);
-
-
-        let ganadores = [...indices].map(i => lista[i]);
+        };
+   
+        
+        // Convertimos el Set de índices en un array.
+        // Obtenemos los nombres de la lista en esas posiciones.
+        const ganadores = [...indices].map(i => lista[i]);
        
+
+
         for(let i = 0; i < cantidadGanadores; i++){
 
             console.log(`Ganador ${i + 1}: ${ganadores[i]}`);
@@ -114,7 +128,8 @@ function sortear(lista, cantidadGanadores){
 
     }else{
 
-        console.error(`Debe haber más de ${cantidadGanadores} nombres en la lista.`)
+        console.error(`Debe haber más de ${cantidadGanadores} nombres en la lista.`);
+        
     };
 
     
