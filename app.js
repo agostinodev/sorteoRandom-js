@@ -1,14 +1,23 @@
+// Botones
 const $btnAgregar = document.getElementById('btnAgregar');
 const $btnVaciarLista = document.getElementById('btnVaciarLista');
 const $btnSortear = document.getElementById('btnSortear');
+
 
 // Cantidad de ganadores
 const cantidadGanadores = 3;
 // Inicialización de lista de nombre
 let lista = [];
 
+
 // Botón para agregar un nombre la lista.
 $btnAgregar.addEventListener('click', ()=> agregarNombre() );
+// Botón para vaciar la lista.
+$btnVaciarLista.addEventListener('click', () => {
+    vaciarLista();
+    actulizarLista(lista);
+    console.log(lista);
+});
 
 //Botón para realizar el sorteo.
 $btnSortear.addEventListener('click', () => sortear(lista, cantidadGanadores));
@@ -44,12 +53,11 @@ function agregarNombre () {
     if(validarLista(lista)){
 
         actulizarLista(lista);
-
+        console.log(lista);
         return lista;
     }
     
 }
-
 
 
 // Actualiza la lista en el Html.
@@ -87,6 +95,16 @@ function actulizarLista(lista) {
     }
 
 }
+
+
+
+function vaciarLista(){
+
+    document.getElementById('textareaNombre').value = '';
+    lista = [];
+
+}
+
 
 
 
