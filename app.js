@@ -5,7 +5,7 @@ const $btnSortear = document.getElementById('btnSortear');
 
 
 // Cantidad de ganadores.
-const cantidadGanadores = 3;
+const cantidadGanadores = 1;
 // Inicialización de la lista de nombres.
 let lista = [];
 
@@ -78,6 +78,8 @@ function actulizarLista(lista) {
     // Si la lista tiene un nombre o más, la genera en el html.
     if(lista.length >= 1){
         
+        $listaHtml.classList.add('sorteo__list');
+        
         const $h2 = document.createElement('h2');
         $h2.textContent = 'Lista';
 
@@ -108,6 +110,7 @@ function mostrarMensaje(mensaje){
     
      const $mostrarMensaje = document.getElementById('mostrarMensaje');
      $mostrarMensaje.textContent = '';
+     $mostrarMensaje.classList.add('sorteo__mensaje');
   
      
      const $parrafo = document.createElement('p');
@@ -125,6 +128,10 @@ function vaciarLista(){
 
     const $mostrarMensaje = document.getElementById('mostrarMensaje');
     $mostrarMensaje.textContent = '';
+    $mostrarMensaje.classList.remove('sorteo__mensaje')
+    
+    const $listaHtml = document.getElementById('listaHtml')
+    $listaHtml.classList.remove('sorteo__list');
 
     document.getElementById('textareaNombre').value = '';
     lista = [];
@@ -175,7 +182,7 @@ function sortear(lista, cantidadGanadores){
 
     }else{
 
-        mostrarMensaje(`Debe haber más de ${cantidadGanadores} nombres en la lista.`);
+        mostrarMensaje(`Debe haber más de ${cantidadGanadores} ${(lista.length === 1)?'nombre':'nombres'} en la lista.`);
         //console.error(`Debe haber más de ${cantidadGanadores} nombres en la lista.`);
         
     };
