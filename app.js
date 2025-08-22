@@ -1,12 +1,12 @@
-// Botones
+// Botones.
 const $btnAgregar = document.getElementById('btnAgregar');
 const $btnVaciarLista = document.getElementById('btnVaciarLista');
 const $btnSortear = document.getElementById('btnSortear');
 
 
-// Cantidad de ganadores
+// Cantidad de ganadores.
 const cantidadGanadores = 3;
-// Inicialización de lista de nombre
+// Inicialización de la lista de nombres.
 let lista = [];
 
 
@@ -20,19 +20,26 @@ $btnVaciarLista.addEventListener('click', () => {
 });
 
 //Botón para realizar el sorteo.
-$btnSortear.addEventListener('click', () => sortear(lista, cantidadGanadores));
+$btnSortear.addEventListener('click', () => {
+    
+    sortear(lista, cantidadGanadores)
+    
+
+});
 
 
 // Valida la lista.
 const validarLista = (lista) => {
 
     //Valida que la lista no esté vacia.
-    if(lista.length === 0) return console.error('La lista de nombres esta vacia.')
+    if(lista.length === 0) return mostrarMensaje('La lista de nombres está vacia.');
+    //console.error('La lista de nombres esta vacia.')
 
     //Valida que el nombre no sea un número o que no contenga números.    
     lista.find( el => {
 
-        if(/\d/.test(el)) return console.error('El nombre NO debe tener números.');
+        if(/\d/.test(el)) return mostrarMensaje('El nombre NO debe tener números.');
+        //console.error('El nombre NO debe tener números.');
 
     })
  
@@ -65,7 +72,7 @@ function actulizarLista(lista) {
 
     const $listaHtml = document.getElementById('listaHtml');
 
-    // limpiar antes de volver a renderizar
+    // limpiar antes de volver a renderizar.
     $listaHtml.innerHTML = '';
 
     // Si la lista tiene un nombre o más, la genera en el html.
@@ -97,8 +104,27 @@ function actulizarLista(lista) {
 }
 
 
+function mostrarMensaje(mensaje){
+    
+     const $mostrarMensaje = document.getElementById('mostrarMensaje');
+     $mostrarMensaje.textContent = '';
+  
+     
+     const $parrafo = document.createElement('p');
+     $parrafo.textContent = `${mensaje}`;
+
+     $mostrarMensaje.appendChild($parrafo);
+    
+
+
+}
+
+
 
 function vaciarLista(){
+
+    const $mostrarMensaje = document.getElementById('mostrarMensaje');
+    $mostrarMensaje.textContent = '';
 
     document.getElementById('textareaNombre').value = '';
     lista = [];
@@ -110,13 +136,13 @@ function vaciarLista(){
 
 
 
-// Genera un número aleatorio
+// Genera un número aleatorio.
 function aleatorio(lista){
     return Math.floor(Math.random() * lista.length);
 }
 
 
-// Sorte el ganador o los ganadores
+// Sorte el ganador o los ganadores.
 function sortear(lista, cantidadGanadores){
     
 
@@ -136,17 +162,21 @@ function sortear(lista, cantidadGanadores){
         // Obtenemos los nombres de la lista en esas posiciones.
         const ganadores = [...indices].map(i => lista[i]);
        
-
+        
 
         for(let i = 0; i < cantidadGanadores; i++){
 
-            console.log(`Ganador ${i + 1}: ${ganadores[i]}`);
+            mostrarMensaje(`Ganador ${i + 1}: ${ganadores[i]}`);
+            //console.log(`Ganador ${i + 1}: ${ganadores[i]}`);
         }
+
+
 
 
     }else{
 
-        console.error(`Debe haber más de ${cantidadGanadores} nombres en la lista.`);
+        mostrarMensaje(`Debe haber más de ${cantidadGanadores} nombres en la lista.`);
+        //console.error(`Debe haber más de ${cantidadGanadores} nombres en la lista.`);
         
     };
 

@@ -7,29 +7,38 @@
     <title>Sorteo.Random()</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">Documentacion</a></li>
+    <header class="header">
+        <nav class="header__nav">
+            <ul class="header__list">
+                <li class="header__item">
+                    <a class="header__link" href="#">Home</a>
+                </li>
+                <li class="header__item">
+                    <a class="header__link" href="#">Documentación</a>
+                </li>
             </ul>
         </nav>
     </header>
-    <main>
-        <h1>Sorteo.<span>Random()</span></h1>
-        <section>
-            <h2>Ingrese el nombre</h2>
-            <div>
+    <main class="sorteo">
+        <div class="sorteo__title">
+            <h1>Sorteo.<span class="gradiente">Random()</span></h1>
+        </div>
+        <section class="sorteo__container">
+            <div class="sorteo__inputs">
                 <!-- <input type="text" id="inputNombre" placeholder="Nombre"> -->
-                 <textarea  id="textareaNombre" rows="20" cols="20" placeholder="Escriba una lista de nombres"></textarea>
-                <button id="btnAgregar">Agregar</button>
-                <button id="btnVaciarLista">Vaciar lista</button>
+                <textarea  id="textareaNombre" rows="20" class="sorteo__textarea" placeholder="Escriba una lista de nombres"></textarea>
+                
             </div>
             <div>
+                <button id="btnAgregar">Agregar</button>
+                <button id="btnVaciarLista">Vaciar lista</button>
                 <button id="btnSortear">Sortear</button>
             </div>
         </section>
-        <section id="listaHtml">
+        <section id="mostrarMensaje" class="sorteo__mensaje">
+            
+        </section>
+        <section id="listaHtml" class="sorteo__list">
             
         </section>
     </main>
