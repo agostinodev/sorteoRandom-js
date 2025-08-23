@@ -1,4 +1,4 @@
-import { mostrarMensaje } from "../components/mostrar-mensaje.js";
+import { mostrarMensaje } from './index.js';
 
 
  // Valida la lista.

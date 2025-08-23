@@ -1,4 +1,4 @@
-import { mostrarMensaje } from "../components/mostrar-mensaje.js";
+import { mostrarMensaje } from './index.js';
 
 
 // Genera un número aleatorio.
@@ -10,6 +10,7 @@ export function aleatorio(lista){
 
 // Sorte el ganador o los ganadores.
 export function sortear(lista, cantidadGanadores){
+    console.log("sorto", lista)
     
 
     if( lista.length > cantidadGanadores){
