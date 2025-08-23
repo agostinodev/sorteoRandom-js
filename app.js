@@ -60,6 +60,7 @@ function agregarNombre () {
     if(validarLista(lista)){
 
         actulizarLista(lista);
+        mostrarMensaje("Lista agregada.");
         console.log(lista);
         return lista;
     }
