@@ -20,6 +20,8 @@ import { mostrarMensaje } from './index.js';
         return false
     }
 
+    if(lista.some( (el, i, array) => array.indexOf(el) != i)) return console.log('hola mundo');
+
  
     return true;
 };

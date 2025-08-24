@@ -1,4 +1,4 @@
-import { agregarNombre, vaciarLista, sortear, mostrarLista, aleatorio } from './utils/index.js'
+import { agregarNombre, vaciarLista, sortear, mostrarLista, aleatorio } from './src/utils/index.js'
   
 
 

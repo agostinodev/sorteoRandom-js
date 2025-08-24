@@ -7,6 +7,10 @@ body,header, main, section, div, ul, li, a, h1, h2, p{
     padding: 0;
 }
 
+input, textarea, select {
+    font-size: 16px;
+  }
+
 html {
   -webkit-text-size-adjust: 100%;
 }
@@ -111,7 +115,7 @@ body{
 }
 
 .mensaje-listaVacia{
-    background-color: #FAF1E6;
+    background-color: #9FB3DF;
     border-radius: 8px;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
     padding: 1.5rem; 
@@ -129,6 +133,7 @@ body{
 .mensaje-ganadores p{
     margin-bottom: 0.8rem;
 }
+
 .sorteo__list{
     border-radius: 8px;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
