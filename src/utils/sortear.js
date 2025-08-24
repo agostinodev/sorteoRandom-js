@@ -1,4 +1,4 @@
-import { mostrarMensaje } from './index.js';
+import { mostrarLista, mostrarMensaje, vaciarLista } from './index.js';
 
 
 // Genera un número aleatorio.
@@ -14,6 +14,8 @@ export function sortear(lista, cantidadGanadores){
     
 
     if( lista.length > cantidadGanadores){
+
+        document.getElementById('btnAgregar').disabled  = true;
 
         // Guarda indices únicos.
         const indices = new Set();
@@ -37,16 +39,16 @@ export function sortear(lista, cantidadGanadores){
             //console.log(`Ganador ${i + 1}: ${ganadores[i]}`);
         }
 
-
-
+        
+        
 
     }else{
 
         mostrarMensaje(`Debe haber más de ${cantidadGanadores} ${(lista.length === 1)?'nombre':'nombres'} en la lista.`);
+
         //console.error(`Debe haber más de ${cantidadGanadores} nombres en la lista.`);
         
     };
 
-    
 
 }

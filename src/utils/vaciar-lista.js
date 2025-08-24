@@ -12,7 +12,9 @@ export function vaciarLista( lista ){
 
     document.getElementById('textareaNombre').value = '';
 
-    return lista.length = 0;
+    lista.length = 0;
+
+    return lista;
 
 
 }

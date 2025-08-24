@@ -20,8 +20,7 @@ function initApp(){
     $btnAgregar.addEventListener('click', ()=> {
       
         agregarNombre(lista);
-
-        console.log(lista)
+        document.getElementById('textareaNombre').value = '';
     
     });
 
@@ -30,15 +29,15 @@ function initApp(){
 
         vaciarLista(lista);
         mostrarLista(lista);
-        console.log(lista);
-
+        $btnAgregar.disabled = false;
     });
 
     //Botón para realizar el sorteo.
     $btnSortear.addEventListener('click', () => {
 
-        aleatorio(lista)
-        sortear(lista, cantidadGanadores)
+        aleatorio(lista);
+        sortear(lista, cantidadGanadores);
+        $btnSortear.disabled = true;
 
     });
 
