@@ -14,7 +14,14 @@ export function agregarNombre ( lista ) {
     // Si el nombre es valido lo agrega a la lista y lo agrega a la lista del html.
     if(validarLista(nombres)){
 
+        // Valida que no haya nombres repetidos en la lista.
+        if(nombres.some( el => lista.includes(el))){
+            return mostrarMensaje("informacion", 'El nombre ya está en la lista. No pueden haber nombres repetidos.');
+        }
+        
+
         lista.push(...nombres);
+        console.log(lista)
 
         mostrarLista(lista);
         mostrarMensaje("listaAgregada",'Lista agregada.');

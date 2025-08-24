@@ -11,16 +11,20 @@ import { mostrarMensaje } from './index.js';
     // Valida que el nombre no sea un número o que no contenga números.
     if(lista.some(el => /\d/.test(el))){
         mostrarMensaje("informacion",'El nombre NO debe tener números.');
-        return false
+        return false;
     }
 
     // Valida que el nombre no tenga caracteres no alfanúmericos.
     if(lista.some(el => /\W/.test(el))){
         mostrarMensaje("informacion",'El nombre NO debe tener caracteres no alfanuméricos.');
-        return false
-    }
+        return false;
+    };
 
-    //if(lista.some( (el, i, array) => array.indexOf(el) != i)) return console.log('hola mundo');
+    //Valida nombres repetidos.
+    if(lista.some( (el, i, array) => array.indexOf(el) != i)){
+        mostrarMensaje("informacion", 'No puede haber nombres repetidos.');
+        return false;
+    };
 
  
     return true;

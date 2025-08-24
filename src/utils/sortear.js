@@ -11,8 +11,8 @@ export function aleatorio(lista){
 // Sorte el ganador o los ganadores.
 export function sortear(lista, cantidad){
     
-    if( cantidad <= 0 || null){
-        mostrarMensaje("informacion", 'La cantidad de ganadores es invalida.');
+    if( (cantidad <= 0) || (cantidad === null)|| (cantidad > 10) ){
+        mostrarMensaje("informacion", 'La cantidad de ganadores es invalida. Min: 1 Max: 10.');
         throw new Error("La cantidad de ganadores es invalida.");
     } 
     
