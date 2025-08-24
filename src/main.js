@@ -7,7 +7,7 @@ const $btnVaciarLista = document.getElementById('btnVaciarLista');
 const $btnSortear = document.getElementById('btnSortear');
 
 // Cantidad de ganadores.
-const cantidadGanadores = 1;
+const cantidadGanadores = 3;
 
 // Inicialización de la lista de nombres.
 const lista = [];

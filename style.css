@@ -92,7 +92,9 @@ body{
     font-size: inherit;
 }
 
-.sorteo__mensaje{
+
+
+.mensaje-informacion{
     background-color: #A6AEBF;
     border-radius: 8px;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
@@ -100,7 +102,33 @@ body{
  
 }
 
+.mensaje-listaAgregada{
+    background-color: #D0E8C5;
+    border-radius: 8px;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem; 
+ 
+}
 
+.mensaje-listaVacia{
+    background-color: #FAF1E6;
+    border-radius: 8px;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem; 
+ 
+}
+
+.mensaje-ganadores{
+    background-color: #FADA7A;
+    border-radius: 8px;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem; 
+ 
+}
+
+.mensaje-ganadores p{
+    margin-bottom: 0.8rem;
+}
 .sorteo__list{
     border-radius: 8px;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);

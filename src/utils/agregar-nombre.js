@@ -10,15 +10,14 @@ export function agregarNombre ( lista ) {
     //El string que recibe de textarea lo pasa a un arreglo, tomando "\n" y "," para separar las palabras.
     const nombres = $textTarea.split(/[\n,]+/).map(el => el.trim()).filter(Boolean);
     
-    lista.push(...nombres);
 
+    // Si el nombre es valido lo agrega a la lista y lo agrega a la lista del html.
+    if(validarLista(nombres)){
 
-    // Si la lista es valida, la acutualiza en el Html y retorna la lista
-    if(validarLista(lista)){
-        console.log("validacion",lista);
+        lista.push(...nombres);
+
         mostrarLista(lista);
-        mostrarMensaje("Lista agregada.");
-        console.log(typeof lista)
+        mostrarMensaje("listaAgregada",'Lista agregada.');
 
 
         const $btnSortear = document.getElementById('btnSortear');
