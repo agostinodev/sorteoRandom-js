@@ -7,11 +7,18 @@ export function aleatorio(lista){
 }
 
 
+
 // Sorte el ganador o los ganadores.
-export function sortear(lista, cantidadGanadores){
+export function sortear(lista, cantidad){
     
+    if( cantidad <= 0 || null){
+        mostrarMensaje("informacion", 'La cantidad de ganadores es invalida.');
+        throw new Error("La cantidad de ganadores es invalida.");
+    } 
+    
+
     //Si hay más nombres que cantidad de ganadores hace el sorteo.
-    if( lista.length > cantidadGanadores){
+    if( lista.length > cantidad){
 
         // Deshabilita el botón Agregar.
         document.getElementById('btnAgregar').disabled  = true;
@@ -20,7 +27,7 @@ export function sortear(lista, cantidadGanadores){
         const indices = new Set();
 
         // Genera indices únicos, para que no se repitan los ganadores.
-        while(indices.size < cantidadGanadores){
+        while(indices.size < cantidad){
 
             indices.add(aleatorio(lista));
         };
@@ -52,7 +59,7 @@ export function sortear(lista, cantidadGanadores){
 
     }else{
 
-        mostrarMensaje("informacion", `Debe haber más de ${cantidadGanadores} ${(lista.length === 1)?'nombre':'nombres'} en la lista.`);
+        mostrarMensaje("informacion", `Debe haber más de ${cantidad} ${(lista.length === 1)?'nombre':'nombres'} en la lista.`);
         
     };
 

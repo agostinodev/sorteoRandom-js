@@ -8,6 +8,7 @@ export function mostrarMensaje(tipo, mensaje){
      // Limpia la clase
      $mostrarMensaje.className = '';
 
+     // Segun el tipo de iformacion cambia la clase en el html.
      if(tipo === "informacion"){
           $mostrarMensaje.classList.add('mensaje-informacion');
 
