@@ -7,6 +7,7 @@
     <title>Sorteo.Random()</title>
 </head>
 <body>
+    <!-- Header -->
     <header class="header">
         <nav class="header__nav">
             <ul class="header__list">
@@ -19,36 +20,37 @@
             </ul>
         </nav>
     </header>
+    <!-- Main -->
     <main class="sorteo">
-        <div class="sorteo__title">
-            <h1>Sorteo.<span class="gradiente">Random()</span></h1>
+        <div class="sorteo__title-container">
+            <h1 class="sorteo__title">Sorteo.<span class="title-gradient">Random()</span></h1>
         </div>
+        <!-- Section Sorteo -->
         <section class="sorteo__container">
-            <div>
-                <label for="sorteo_numGanadores">Ganadores: </label>
-                <input id="inputGanadores" type="number" min="1" max="10" value="1">
+            <!-- Contenedor Input -->
+            <div class="sorteo__input-container">
+                <label for="input-ganadores">Ganadores: </label>
+                <input id="input-ganadores" type="number" min="1" max="10" value="1">
             </div>
-            <div class="sorteo__inputs">
-                <!-- <input type="text" id="inputNombre" placeholder="Nombre"> -->
-                <textarea  id="textareaNombre" rows="20" class="sorteo__textarea" placeholder="Escriba una lista de nombres"></textarea>
-                
-            </div>
+            <!-- Contenedor TextTarea -->
             <div>
-                <button id="btnAgregar">Agregar</button>
-                <button id="btnVaciarLista">Vaciar lista</button>
-                <button id="btnSortear">Sortear</button>
+                <textarea  id="textarea-nombres" rows="10" class="sorteo__textarea" placeholder="Escriba una lista de nombres"></textarea>
+            </div>
+            <!-- Contenedor Botones -->
+            <div class="sorteo__btn-container">
+                <button id="btn-agregar" class="sorteo__btn">Agregar</button>
+                <button id="btn-vaciarLista" class="sorteo__btn">Vaciar lista</button>
+                <button id="btn-sortear" class="sorteo__btn">Sortear</button>
             </div>
         </section>
-        <section id="mostrarMensaje" >
-            
+        <!-- Section Mostra mensaje -->
+        <section id="mensaje-container" >   
         </section>
-        <section id="listaHtml">
-            
+        <!-- Section Mostrar lista -->
+        <section id="lista-container">
         </section>
     </main>
-    <!-- <script src="app.js"></script> -->
     <script type="module" src="/main.js"></script>
-
 </body>
 </body>
 </html>

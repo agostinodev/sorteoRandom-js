@@ -21,7 +21,7 @@ export function sortear(lista, cantidad){
     if( lista.length > cantidad){
 
         // Deshabilita el botón Agregar.
-        document.getElementById('btnAgregar').disabled  = true;
+        document.getElementById('btn-agregar').disabled  = true;
 
         // Guarda indices únicos.
         const indices = new Set();
@@ -37,21 +37,21 @@ export function sortear(lista, cantidad){
         // Obtenemos los nombres de la lista en esas posiciones.
         const ganadores = [...indices].map(i => lista[i]);
        
-        const $mostrarMensaje = document.getElementById('mostrarMensaje');
-        $mostrarMensaje.textContent = '';
+        const $mensajeContainer = document.getElementById('mensaje-container');
+        $mensajeContainer.textContent = '';
 
         // Limpia la clase
-        $mostrarMensaje.className = '';
+        $mensajeContainer.className = '';
 
         
-        $mostrarMensaje.classList.add('mensaje-ganadores');
+        $mensajeContainer.classList.add('mensaje-ganadores');
 
         // Mustra los ganadores en el html
         ganadores.forEach((el, i) => {
 
             const $parrafo = document.createElement('p');
             $parrafo.textContent = `Ganador ${i + 1}: ${el}`;
-            $mostrarMensaje.appendChild($parrafo);
+            $mensajeContainer.appendChild($parrafo);
 
         });
         

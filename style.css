@@ -1,3 +1,4 @@
+/* ---- RESET ---- */
 *{
     box-sizing: border-box;
 }
@@ -15,16 +16,43 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+/* ---- RESET END ---- */
+
+/* ---- FONT ---- */
+
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url(./assets/font/OpenSans_SemiCondensed-Regular.ttf);
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'OpenSans-Memium';
+    src: url(./assets/font/OpenSans_SemiCondensed-Medium.ttf);
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'OpenSans-Bold';
+    src: url(./assets/font/OpenSans-Bold.ttf);
+    font-style: normal;
+
+}
+
+
+
 
 body{
     background-color: #D6A99D;
-    font-family: sans-serif;
+    font-family:'OpenSans-Regular';
     min-height: 100dvh;
     color: #222831;
 }
 
 
-
+/* ---- HEADER ---- */
 .header{
     width: 100%;
     background-color: #222831;
@@ -32,7 +60,7 @@ body{
     margin-bottom: 2rem;
 }
 
-
+/* ---- NAV ----  */
 .header__nav{
     padding: 1rem;
 }
@@ -51,6 +79,10 @@ body{
     text-decoration: none;
     color: #EEEDEB;
 }
+/* ---- HEADER END ---- */
+
+
+/* ---- MAIN SORTEO ---- */
 
 .sorteo{
     display: flex;
@@ -59,33 +91,50 @@ body{
     margin: auto;
     gap: 2rem;
     padding: 1.5rem;
-
 }
 
+
+/* ---- SECTION SORTEO ---- */
+.sorteo__title-container{
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
 
 .sorteo__title{
-    margin-bottom: 1.5rem;
-    font-size: 1.2rem;
-    text-align: center;
-
-}
-
-
-.gradiente{
-    
-    font-weight: bold;
-    background: linear-gradient(90deg, #ff7e5f, #feb47b);
-    background-clip: text;
-    color: transparent;
+    font-size: 2rem;
+    font-family: 'OpenSans-Bold';
     text-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
 
 }
+
+.title-gradient{
+    font-weight: bold;
+    background: linear-gradient(90deg, #5D688A, #494c64);
+    background-clip: text;
+    color: transparent;
+}    
+
 
 .sorteo__container{
     border-radius: 8px;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
     padding: 1.5rem;  
-    
+}
+
+label{
+    font-family: 'OpenSans-Memium';
+}
+
+.sorteo__input-container{
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#input-ganadores{
+    font-size: 0.8rem;
+
 }
 
 .sorteo__textarea{
@@ -96,14 +145,49 @@ body{
     font-size: inherit;
 }
 
+.sorteo__btn-container{
+    margin-top: 0.8rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.sorteo__btn{
+    border-radius: 6px;
+    padding: 0.6rem;
+    border: none;
+    background-color: #5D688A;
+    font-family: inherit;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    color: #EEEDEB;
+    font-family: 'OpenSans-Memium';
+    transition: background-color 1s ease;
+}
 
 
+.sorteo__btn:hover{
+    background-color: #494c64;
+}
+
+
+
+[disabled] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+
+/* ---- SECTION SORTEO END ---- */
+
+
+
+/* ---- SECTION MENSAJES ---- */
 .mensaje-informacion{
     background-color: #A6AEBF;
     border-radius: 8px;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
     padding: 1.5rem; 
- 
 }
 
 .mensaje-listaAgregada{
@@ -111,7 +195,6 @@ body{
     border-radius: 8px;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
     padding: 1.5rem; 
- 
 }
 
 .mensaje-listaVacia{
@@ -119,7 +202,6 @@ body{
     border-radius: 8px;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
     padding: 1.5rem; 
- 
 }
 
 .mensaje-ganadores{
@@ -127,20 +209,23 @@ body{
     border-radius: 8px;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
     padding: 1.5rem; 
- 
 }
 
 .mensaje-ganadores p{
     margin-bottom: 0.8rem;
 }
+/* ---- SECTION MENSAJE END ---- */
 
+
+/* ---- SECTION LISTA ---- */
 .sorteo__list{
     border-radius: 8px;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
     padding: 1.5rem; 
-    
 }
 
 .sorteo__list ul{
     padding: 1rem;
 }
+/*  ---- SECTION LISTA END */
+/* ---- MAIN SORTEO END ---- */

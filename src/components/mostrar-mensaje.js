@@ -2,25 +2,25 @@
 
 export function mostrarMensaje(tipo, mensaje){
 
-     const $mostrarMensaje = document.getElementById('mostrarMensaje');
-     $mostrarMensaje.textContent = '';
+     const $mensajeContainer = document.getElementById('mensaje-container');
+     $mensajeContainer.textContent = '';
 
      // Limpia la clase
-     $mostrarMensaje.className = '';
+     $mensajeContainer.className = '';
 
      // Segun el tipo de iformacion cambia la clase en el html.
      if(tipo === "informacion"){
-          $mostrarMensaje.classList.add('mensaje-informacion');
+          $mensajeContainer.classList.add('mensaje-informacion');
 
      }
 
      if(tipo === "listaAgregada"){
-          $mostrarMensaje.classList.add('mensaje-listaAgregada');
+          $mensajeContainer.classList.add('mensaje-listaAgregada');
 
      };
 
      if(tipo === "listaVacia"){
-          $mostrarMensaje.classList.add('mensaje-listaVacia');
+          $mensajeContainer.classList.add('mensaje-listaVacia');
 
      };
   
@@ -28,7 +28,7 @@ export function mostrarMensaje(tipo, mensaje){
      const $parrafo = document.createElement('p');
      $parrafo.textContent = `${mensaje}`;
 
-     $mostrarMensaje.appendChild($parrafo);
+     $mensajeContainer.appendChild($parrafo);
     
 
 

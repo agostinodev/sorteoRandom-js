@@ -5,16 +5,16 @@ import { mostrarMensaje } from './index.js';
 export function vaciarLista( lista ){
 
     // Limpia la lista en el HTMl.
-    const $mostrarMensaje = document.getElementById('mostrarMensaje');
-    $mostrarMensaje.textContent = '';
-    $mostrarMensaje.classList.remove('sorteo__mensaje')
+    const $mensajeContainer = document.getElementById('mensaje-container');
+    $mensajeContainer.textContent = '';
+    $mensajeContainer.classList.remove('sorteo__mensaje')
     
     // Elimina la clase que le da estilo a la lista.
-    const $listaHtml = document.getElementById('listaHtml')
-    $listaHtml.classList.remove('sorteo__list');
+    const $listaContainer = document.getElementById('lista-container')
+    $listaContainer.classList.remove('sorteo__list');
 
     // Limpia el textTarea.
-    document.getElementById('textareaNombre').value = '';
+    document.getElementById('textarea-nombres').value = '';
 
     // Limpia la lista de nombres
     lista.length = 0;

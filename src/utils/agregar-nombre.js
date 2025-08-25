@@ -4,7 +4,7 @@ import { validarLista, mostrarLista, mostrarMensaje } from './index.js';
 // Agregar los nombres a la lista.
 export function agregarNombre ( lista ) {
 
-    const $textTarea = document.getElementById('textareaNombre').value;
+    const $textTarea = document.getElementById('textarea-nombres').value;
     
 
     //El string que recibe de textarea lo pasa a un arreglo, tomando "\n" y "," para separar las palabras.
@@ -27,7 +27,7 @@ export function agregarNombre ( lista ) {
         mostrarMensaje("listaAgregada",'Lista agregada.');
 
 
-        const $btnSortear = document.getElementById('btnSortear');
+        const $btnSortear = document.getElementById('btn-sortear');
         $btnSortear.disabled = false;
 
         return lista;
