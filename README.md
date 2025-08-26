@@ -49,5 +49,8 @@ cd <carpeta-del-proyecto>
 # - con Node (opcional): npx serve .
 ```
 
-```markdown
-![Pantalla principal](./assets/img/sorteo-random.webp)
+```
+
+## 📸 Captura de pantalla
+
+![Captura de pantalla](assets/img/sorteo-random.webp)
