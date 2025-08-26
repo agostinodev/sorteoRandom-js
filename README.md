@@ -4,6 +4,11 @@ Herramienta simple y rápida para realizar sorteos en vivo desde el navegador: c
 
 **Demo:** https://sorteorandom.netlify.app/
 
+
+## 📸 Captura de pantalla
+
+![Captura de pantalla](./assets/img/sorteo-random.webp)
+
 ---
 
 ## ✨ Características
@@ -49,10 +54,7 @@ cd <carpeta-del-proyecto>
 # - con Node (opcional): npx serve .
 ```
 
-```
 
 
-## 📸 Captura de pantalla
 
-![Captura de pantalla](./assets/img/sorteo-random.webp)
 
