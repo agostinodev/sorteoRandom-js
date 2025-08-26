@@ -14,7 +14,7 @@ export function mostrarLista(lista) {
         $listaContainer.classList.add('sorteo__list');
         
         const $h2 = document.createElement('h2');
-        $h2.textContent = 'Lista';
+        $h2.textContent = 'Lista:';
 
 
         const $ul = document.createElement('ul'),

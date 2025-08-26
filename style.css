@@ -18,6 +18,15 @@ html {
 
 /* ---- RESET END ---- */
 
+:root{
+
+    --primary-color:#222831;
+    --secondary-color:#D6A99D;
+    --tertiary-color: #A3DC9A;
+    --text-color: #EEEDEB;
+
+}
+
 /* ---- FONT ---- */
 
 @font-face {
@@ -45,17 +54,17 @@ html {
 
 
 body{
-    background-color: #D6A99D;
+    background-color: var(--secondary-color);
     font-family:'OpenSans-Regular';
     min-height: 100dvh;
-    color: #222831;
+    color: var(--primary-color);
 }
 
 
 /* ---- HEADER ---- */
 .header{
     width: 100%;
-    background-color: #222831;
+    background-color: var(--primary-color);
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
     margin-bottom: 2rem;
 }
@@ -77,7 +86,13 @@ body{
 
 .header__link{
     text-decoration: none;
-    color: #EEEDEB;
+    color: var(--text-color);
+    transition: color 1s ease;
+}
+
+
+.header__link:hover{
+    color: var(--tertiary-color);
 }
 /* ---- HEADER END ---- */
 
@@ -108,10 +123,10 @@ body{
 }
 
 .title-gradient{
-    font-weight: bold;
-    background: linear-gradient(90deg, #5D688A, #494c64);
+    color: var(--tertiary-color);
     background-clip: text;
-    color: transparent;
+    font-family: 'OpenSans-Bold';
+    text-shadow: 0 3px 4px rgba(0, 0, 0, 0.2)
 }    
 
 
@@ -149,25 +164,28 @@ label{
     margin-top: 0.8rem;
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .sorteo__btn{
     border-radius: 6px;
-    padding: 0.6rem;
+    padding: 0.6rem 1rem;
     border: none;
-    background-color: #5D688A;
+    background-color: var(--tertiary-color);
     font-family: inherit;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    color: #EEEDEB;
+    color: var(--text-color);
     font-family: 'OpenSans-Memium';
-    transition: background-color 1s ease;
+    transition: box-shadow 1.2s ease,
+    background-color 1.2s ease;
 }
 
 
 .sorteo__btn:hover{
-    background-color: #494c64;
+   box-shadow: none;
+   background-color: var(--primary-color);
+   opacity: 0.8;
 }
 
 
@@ -191,7 +209,7 @@ label{
 }
 
 .mensaje-listaAgregada{
-    background-color: #D0E8C5;
+    background-color: #898AC4;
     border-radius: 8px;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
     padding: 1.5rem; 
@@ -224,8 +242,16 @@ label{
     padding: 1.5rem; 
 }
 
+.sorteo__list h2{
+    color: var(--tertiary-color);
+    background-clip: text;
+    font-family: 'OpenSans-Bold';
+    text-shadow: 0 3px 4px rgba(0, 0, 0, 0.2)
+}
+
 .sorteo__list ul{
-    padding: 1rem;
+    padding: 2rem;
+    
 }
 /*  ---- SECTION LISTA END */
 /* ---- MAIN SORTEO END ---- */
