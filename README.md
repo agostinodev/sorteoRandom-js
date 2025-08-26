@@ -54,4 +54,5 @@ cd <carpeta-del-proyecto>
 
 ## 📸 Captura de pantalla
 
-![Captura de pantalla](assets/img/sorteo-random.webp)
+![Captura de pantalla](./assets/img/sorteo-random.webp)
+
