@@ -31,21 +31,21 @@ html {
 
 @font-face {
     font-family: 'OpenSans-Regular';
-    src: url(./assets/font/OpenSans_SemiCondensed-Regular.ttf);
+    src: url(/assets/font/OpenSans_SemiCondensed-Regular.ttf);
     font-style: normal;
 
 }
 
 @font-face {
     font-family: 'OpenSans-Memium';
-    src: url(./assets/font/OpenSans_SemiCondensed-Medium.ttf);
+    src: url(/assets/font/OpenSans_SemiCondensed-Medium.ttf);
     font-style: normal;
 
 }
 
 @font-face {
     font-family: 'OpenSans-Bold';
-    src: url(./assets/font/OpenSans-Bold.ttf);
+    src: url(/assets/font/OpenSans-Bold.ttf);
     font-style: normal;
 
 }
@@ -60,48 +60,13 @@ body{
     color: var(--primary-color);
 }
 
-
-/* ---- HEADER ---- */
-.header{
-    width: 100%;
-    background-color: var(--primary-color);
-    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
-    margin-bottom: 2rem;
-}
-
-/* ---- NAV ----  */
-.header__nav{
-    padding: 1rem;
-}
-
-.header__list{
-    display: flex;
-    gap: 1rem;
-    justify-content: right;
-}
-
-.header__item{
-    list-style: none;
-}
-
-.header__link{
-    text-decoration: none;
-    color: var(--text-color);
-    transition: color 1s ease;
-}
-
-
-.header__link:hover{
-    color: var(--tertiary-color);
-}
-/* ---- HEADER END ---- */
-
-
 /* ---- MAIN SORTEO ---- */
 
 .sorteo{
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     max-width: 600px;
     margin: auto;
     gap: 2rem;
@@ -177,14 +142,22 @@ label{
     cursor: pointer;
     color: var(--text-color);
     font-family: 'OpenSans-Memium';
-    transition: box-shadow 1.2s ease,
+    transition: box-shadow 1.2s ,
     background-color 1.2s ease;
 }
 
+#btn-sortear{
+    background-color: #7F55B1;
+}
+
+
+#btn-sortear:hover{
+    background-color: #452f5f
+}
 
 .sorteo__btn:hover{
    box-shadow: none;
-   background-color: var(--primary-color);
+   background-color: #698d63;
    opacity: 0.8;
 }
 

@@ -1,4 +1,4 @@
-import { agregarNombre, vaciarLista, sortear, mostrarLista, aleatorio } from './src/utils/index.js'
+import { agregarNombre, vaciarLista, sortear, mostrarLista, aleatorio} from './src/utils/index.js'
   
 
 // DOM
@@ -6,7 +6,6 @@ const $btnAgregar = document.getElementById('btn-agregar');
 const $btnVaciarLista = document.getElementById('btn-vaciarLista');
 const $btnSortear = document.getElementById('btn-sortear');
 const $inputGanadores = document.getElementById('input-ganadores');
-
 
 
 // Inicialización de la lista de nombres.
@@ -18,7 +17,7 @@ let cantidaGanadores = 1;
 
 
 function initApp(){
-
+    
     //Input para elegir la cantidad de ganadores.
     $inputGanadores.addEventListener('input', ()=>{
 
@@ -50,7 +49,6 @@ function initApp(){
         $btnSortear.disabled = true;
 
     });
-
 
 }
 

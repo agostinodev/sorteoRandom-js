@@ -1,4 +1,4 @@
-# Sorteo.Random()
+# 🏆 Sorteo.Random()
 
 Herramienta simple y rápida para realizar sorteos en vivo desde el navegador: carga una lista de participantes, elige la cantidad de ganadores y presiona **Sortear**. Ideal para streams, clases, eventos y dinámicas de redes.
 
