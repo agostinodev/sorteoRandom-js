@@ -47,6 +47,7 @@ cd <carpeta-del-proyecto>
 # (opción B) Usa un servidor local:
 # - con VS Code: extensión "Live Server"
 # - con Node (opcional): npx serve .
+```
 
 ```markdown
 ![Pantalla principal](./assets/img/sorteo-random.webp)
