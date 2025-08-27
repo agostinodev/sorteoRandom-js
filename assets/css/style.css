@@ -96,12 +96,12 @@ body{
     font-family: 'OpenSans-Bold';
     text-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
     transform: translateY(0) rotate(0deg);
-    animation: caer 1.5s ease forwards;
+    animation: caer 2s ease forwards;
 }
 
 
 @keyframes caer {
-  0% {
+  100% {
     transform: translateY(0) rotate(0deg);
     opacity: 1;
   }
