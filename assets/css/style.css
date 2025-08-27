@@ -16,7 +16,7 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-/* ---- RESET END ---- */
+/* ---- FIN RESET ---- */
 
 :root{
 
@@ -54,6 +54,8 @@ html {
 
 
 body{
+    display: grid;
+    grid-template-rows: 1fr auto;
     background-color: var(--secondary-color);
     font-family:'OpenSans-Regular';
     min-height: 100dvh;
@@ -63,11 +65,11 @@ body{
 /* ---- MAIN SORTEO ---- */
 
 .sorteo{
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 600px;
+    width: 100%;       
+    max-width: 400px;  
     margin: auto;
     gap: 2rem;
     padding: 1.5rem;
@@ -88,17 +90,33 @@ body{
 }
 
 .title-gradient{
+    display: inline-block;
     color: var(--tertiary-color);
     background-clip: text;
     font-family: 'OpenSans-Bold';
-    text-shadow: 0 3px 4px rgba(0, 0, 0, 0.2)
-}    
+    text-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(0) rotate(0deg);
+    animation: caer 1.5s ease forwards;
+}
+
+
+@keyframes caer {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(13px) rotate(10deg);
+    opacity: 1;
+  }
+}
 
 
 .sorteo__container{
     border-radius: 8px;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
-    padding: 1.5rem;  
+    padding: 1.5rem;
+    width: 100%;  
 }
 
 label{
@@ -169,11 +187,11 @@ label{
 }
 
 
-/* ---- SECTION SORTEO END ---- */
+/* ---- FIN SECCIÓN SORTEO ---- */
 
 
 
-/* ---- SECTION MENSAJES ---- */
+/* ---- SECCIÓN MENSAJES ---- */
 .mensaje-informacion{
     background-color: #A6AEBF;
     border-radius: 8px;
@@ -205,10 +223,10 @@ label{
 .mensaje-ganadores p{
     margin-bottom: 0.8rem;
 }
-/* ---- SECTION MENSAJE END ---- */
+/* ---- FIN SECCIÓN MENSAJE ---- */
 
 
-/* ---- SECTION LISTA ---- */
+/* ---- SECCIÓN LISTA ---- */
 .sorteo__list{
     border-radius: 8px;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
@@ -226,5 +244,36 @@ label{
     padding: 2rem;
     
 }
-/*  ---- SECTION LISTA END */
-/* ---- MAIN SORTEO END ---- */
+/* ---- FIN SECCIÓN LISTA ---- */
+/* ---- MAIN SORTEO FIN ---- */
+
+
+/* ---- FOOTER ---- */
+footer{
+    background-color: var(--primary-color);
+    padding: 1rem;
+}
+
+.footer__container{
+    color: var(--text-color);
+    text-align: center;
+    min-height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.footer__span{
+    color: var(--tertiary-color);
+}
+
+
+@media (max-width: 768px) {
+
+  .footer__container p{
+    font-size: 0.8rem;
+  }
+}
+
+/* ---- FOOTER FIN */
