@@ -4,6 +4,7 @@
 }
 
 body,header, main, section, div, ul, li, a, h1, h2, p{
+    
     margin: 0;
     padding: 0;
 }
@@ -16,16 +17,8 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+
 /* ---- FIN RESET ---- */
-
-:root{
-
-    --primary-color:#222831;
-    --secondary-color:#D6A99D;
-    --tertiary-color: #A3DC9A;
-    --text-color: #EEEDEB;
-
-}
 
 /* ---- FONT ---- */
 
@@ -37,7 +30,7 @@ html {
 }
 
 @font-face {
-    font-family: 'OpenSans-Memium';
+    font-family: 'OpenSans-Medium';
     src: url(/assets/font/OpenSans_SemiCondensed-Medium.ttf);
     font-style: normal;
 
@@ -53,18 +46,34 @@ html {
 
 
 
+:root{
+
+    --primary-color:#222831;
+    --secondary-color:#D6A99D;
+    --tertiary-color: #A3DC9A;
+    --text-color: #EEEDEB;
+    --font-family-regular: 'OpenSans-Regular';
+    --font-family-medium: 'OpenSans-Medium';
+    --font-family-bold: 'OpenSans-Bold';
+}
+
+
+
+
+
+
 body{
     display: grid;
     grid-template-rows: 1fr auto;
     background-color: var(--secondary-color);
-    font-family:'OpenSans-Regular';
+    font-family:var(--font-family-regular);
     min-height: 100dvh;
     color: var(--primary-color);
 }
 
 /* ---- MAIN SORTEO ---- */
 
-.sorteo{
+.main{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,20 +85,21 @@ body{
 }
 
 
-/* ---- SECTION SORTEO ---- */
-.sorteo__title-container{
+/* ---- SECCIÓN SORTEO ---- */
+.main__title-container{
     margin-bottom: 1.5rem;
     text-align: center;
 }
 
-.sorteo__title{
+.main__title{
     font-size: 2rem;
-    font-family: 'OpenSans-Bold';
+    font-family: var(--font-family-bold);
     text-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+    
 
 }
 
-.title-gradient{
+.main__title-gradient{
     display: inline-block;
     color: var(--tertiary-color);
     background-clip: text;
@@ -99,7 +109,7 @@ body{
     animation: caer 2s ease forwards;
 }
 
-
+/* ANIMACIÓN TITULO */
 @keyframes caer {
   100% {
     transform: translateY(0) rotate(0deg);
@@ -120,18 +130,22 @@ body{
 }
 
 label{
-    font-family: 'OpenSans-Memium';
+    font-family: var(--font-family-medium);
 }
 
 .sorteo__input-container{
     margin-bottom: 0.8rem;
     display: flex;
     align-items: center;
+    padding: 4px;
     gap: 1rem;
 }
 
 #input-ganadores{
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+    border-radius: 0.4rem;
+    padding: 2px 6px;
+    border: none;
 
 }
 
@@ -139,6 +153,7 @@ label{
     resize: none;
     padding: 0.6rem;
     border-radius: 6px;
+    border: none;
     width: 100%;
     font-size: inherit;
 }
@@ -159,7 +174,7 @@ label{
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     color: var(--text-color);
-    font-family: 'OpenSans-Memium';
+    font-family: var(--font-family-medium);
     transition: box-shadow 1.2s ,
     background-color 1.2s ease;
 }
@@ -220,27 +235,56 @@ label{
     padding: 1.5rem; 
 }
 
-.mensaje-ganadores p{
-    margin-bottom: 0.8rem;
+
+.ganadores__fecha-container{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 4px;
+    margin-bottom: 0.7rem;
+    border-bottom: 1px solid #868c9a;
 }
+
+
+.ganadores__fecha{
+    color: #868c9a;
+    font-size: 0.7rem;
+}
+
+.ganadores__lista{
+    padding: 1rem;
+    list-style: none;
+}
+
+.ganadores__lista li{
+    margin-bottom: 0.3rem;
+
+    ;
+}
+
+.ganadores__lista li span{
+    font-family: var(--font-family-medium);
+    font-size: 1rem;
+}
+
 /* ---- FIN SECCIÓN MENSAJE ---- */
 
 
 /* ---- SECCIÓN LISTA ---- */
-.sorteo__list{
+.sorteo__lista{
     border-radius: 8px;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
     padding: 1.5rem; 
 }
 
-.sorteo__list h2{
+.sorteo__lista h2{
     color: var(--tertiary-color);
     background-clip: text;
     font-family: 'OpenSans-Bold';
     text-shadow: 0 3px 4px rgba(0, 0, 0, 0.2)
 }
 
-.sorteo__list ul{
+.sorteo__lista ul{
     padding: 2rem;
     
 }
@@ -254,7 +298,7 @@ footer{
     padding: 1rem;
 }
 
-.footer__container{
+.footer-container{
     color: var(--text-color);
     text-align: center;
     min-height: 6rem;
@@ -262,6 +306,7 @@ footer{
     justify-content: center;
     align-items: center;
     margin-top: 1rem;
+    font-size: 0.9rem;
 }
 
 .footer__span{
@@ -272,7 +317,7 @@ footer{
 @media (max-width: 768px) {
 
   .footer__container p{
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 }
 

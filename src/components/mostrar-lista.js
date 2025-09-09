@@ -11,7 +11,7 @@ export function mostrarLista(lista) {
     // Si la lista tiene un nombre o más, la genera en el html.
     if(lista.length >= 1){
         
-        $listaContainer.classList.add('sorteo__list');
+        $listaContainer.classList.add('sorteo__lista');
         
         const $h2 = document.createElement('h2');
         $h2.textContent = 'Lista:';

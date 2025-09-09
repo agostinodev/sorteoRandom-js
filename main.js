@@ -43,7 +43,7 @@ function initApp(){
 
     //Botón para realizar el sorteo.
     $btnSortear.addEventListener('click', () => {
-
+        console.log(cantidaGanadores)
         aleatorio(lista);
         sortear(lista, cantidaGanadores);
         $btnSortear.disabled = true;

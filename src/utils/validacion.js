@@ -5,7 +5,7 @@ import { mostrarMensaje } from './index.js';
  export const validarLista = (lista) => {
     
     // Valida que la lista no esté vacia.
-    if(lista.length === 0) return mostrarMensaje("informacion",'La lista de nombres está vacia.');
+    if(lista.length === 0) return mostrarMensaje("informacion",'No ingreso ningún nombre.');
     //console.error('La lista de nombres esta vacia.')
 
     // Valida que el nombre no sea un número o que no contenga números.

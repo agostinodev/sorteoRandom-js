@@ -1,4 +1,5 @@
-import { mostrarMensaje } from './index.js';
+import { mostrarMensaje, mostrarGanadores } from './index.js';
+
 
 
 // Genera un número aleatorio.
@@ -17,8 +18,8 @@ export function sortear(lista, cantidad){
     } 
     
 
-    //Si hay más nombres que cantidad de ganadores hace el sorteo.
-    if( lista.length > cantidad){
+    //Para que la cantidad de ganadores no sea mayor a la lista.
+    if( lista.length >= cantidad){
 
         // Deshabilita el botón Agregar.
         document.getElementById('btn-agregar').disabled  = true;
@@ -36,30 +37,15 @@ export function sortear(lista, cantidad){
         // Convertimos el Set de índices en un array.
         // Obtenemos los nombres de la lista en esas posiciones.
         const ganadores = [...indices].map(i => lista[i]);
-       
-        const $mensajeContainer = document.getElementById('mensaje-container');
-        $mensajeContainer.textContent = '';
 
-        // Limpia la clase
-        $mensajeContainer.className = '';
 
+        mostrarGanadores(ganadores);
         
-        $mensajeContainer.classList.add('mensaje-ganadores');
-
-        // Mustra los ganadores en el html
-        ganadores.forEach((el, i) => {
-
-            const $parrafo = document.createElement('p');
-            $parrafo.textContent = `Ganador ${i + 1}: ${el}`;
-            $mensajeContainer.appendChild($parrafo);
-
-        });
-        
-        
+        document.getElementById('btn-sortear').disabled = true;
 
     }else{
 
-        mostrarMensaje("informacion", `Debe haber más de ${cantidad} ${(lista.length === 1)?'nombre':'nombres'} en la lista.`);
+        mostrarMensaje("informacion", `La cantidad de ganadores no puede ser mayor a la cantida de nombres en la lista`);
         
     };
 
