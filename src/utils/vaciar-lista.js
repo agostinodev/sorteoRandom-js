@@ -11,7 +11,7 @@ export function vaciarLista( lista ){
     
     // Elimina la clase que le da estilo a la lista.
     const $listaContainer = document.getElementById('lista-container')
-    $listaContainer.classList.remove('sorteo__list');
+    $listaContainer.classList.remove('sorteo__lista');
 
     // Limpia el textTarea.
     document.getElementById('textarea-nombres').value = '';
