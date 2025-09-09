@@ -15,7 +15,8 @@ import { mostrarMensaje } from './index.js';
     }
 
     // Valida que el nombre no tenga caracteres no alfanúmericos.
-    if(lista.some(el => /\W/.test(el))){
+    // Permite agregar nombres compuestos.
+    if(lista.some(el => !/^[a-zA-Záäéëíïóöúü\s]+$/.test(el))){
         mostrarMensaje("informacion",'El nombre NO debe tener caracteres no alfanuméricos.');
         return false;
     };

@@ -14,10 +14,11 @@ export function mostrarGanadores(listaGanadores) {
 
     const $ganadoresContainer = document.createElement('div');
     $ganadoresContainer.innerHTML = `
-        <div class="ganadores__fecha-container">
-            <p class="ganadores__fecha">Fecha: ${fecha}</p>
+        <div class="ganadores__date-container">
+            <p class="ganadores__title">Sorteo.<span>Random()</span></p>
+            <p class="ganadores__date">Fecha: ${fecha}</p>
         </div>
-        <ul class="ganadores__lista"></ul>
+        <ul class="ganadores__list"></ul>
     `;
 
     $mensajeContainer.appendChild($ganadoresContainer);
@@ -34,6 +35,6 @@ export function mostrarGanadores(listaGanadores) {
 
     });
 
-    document.querySelector('.ganadores__lista').appendChild($fragment);
+    document.querySelector('.ganadores__list').appendChild($fragment);
 
 }

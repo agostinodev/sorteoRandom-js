@@ -3,22 +3,30 @@
 // Actualiza la lista en el Html.
 export function mostrarLista(lista) {
 
-    const $listaContainer = document.getElementById('lista-container');
+    const $sorteoListaContainer = document.getElementById('sorteo__list-container');
 
     // limpiar antes de volver a renderizar.
-    $listaContainer.innerHTML = '';
+    $sorteoListaContainer.innerHTML = '';
 
     // Si la lista tiene un nombre o más, la genera en el html.
     if(lista.length >= 1){
         
-        $listaContainer.classList.add('sorteo__lista');
-        
-        const $h2 = document.createElement('h2');
-        $h2.textContent = 'Lista:';
+        $sorteoListaContainer.classList.add('sorteo__list');
 
+        const $listaContainer = document.createElement('div');
+        $listaContainer.classList.add('list-container');
+        $listaContainer.innerHTML = `
+             <div class="list__title-container">
+                    <h2>Lista</h2>
+                    <span>${lista.length}</span>
+                </div>
+                <ul class="list"></ul>
+        `;
 
-        const $ul = document.createElement('ul'),
-            $fragment = document.createDocumentFragment();
+        $sorteoListaContainer.appendChild($listaContainer);
+
+     
+        const $fragment = document.createDocumentFragment();
             
 
         // Genera los li de la ul.
@@ -29,10 +37,7 @@ export function mostrarLista(lista) {
             $fragment.appendChild($li);
         });
 
-
-            $listaContainer.appendChild($h2);
-            $listaContainer.appendChild($ul);
-            $ul.appendChild($fragment);
+        document.querySelector('.list').appendChild($fragment);  
 
     }
 

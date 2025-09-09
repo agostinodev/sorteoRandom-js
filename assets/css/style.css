@@ -236,9 +236,9 @@ label{
 }
 
 
-.ganadores__fecha-container{
+.ganadores__date-container{
     display: flex;
-    justify-content: right;
+    justify-content: space-between;
     align-items: center;
     padding: 4px;
     margin-bottom: 0.7rem;
@@ -246,23 +246,33 @@ label{
 }
 
 
-.ganadores__fecha{
+.ganadores__title{
+    font-family: var(--font-family-medium);
+    font-size: 1rem;
+}
+
+
+.ganadores__title span{
+    color: var(--tertiary-color);
+}
+
+.ganadores__date{
     color: #868c9a;
     font-size: 0.7rem;
 }
 
-.ganadores__lista{
+.ganadores__list{
     padding: 1rem;
     list-style: none;
 }
 
-.ganadores__lista li{
+.ganadores__list li{
     margin-bottom: 0.3rem;
 
     ;
 }
 
-.ganadores__lista li span{
+.ganadores__list li span{
     font-family: var(--font-family-medium);
     font-size: 1rem;
 }
@@ -271,20 +281,35 @@ label{
 
 
 /* ---- SECCIÓN LISTA ---- */
-.sorteo__lista{
+.sorteo__list{
     border-radius: 8px;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
     padding: 1.5rem; 
 }
 
-.sorteo__lista h2{
-    color: var(--tertiary-color);
-    background-clip: text;
-    font-family: 'OpenSans-Bold';
-    text-shadow: 0 3px 4px rgba(0, 0, 0, 0.2)
+
+.list__title-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #868c9a;
+    padding: 4px;
+
 }
 
-.sorteo__lista ul{
+
+
+.list__title-container h2{
+    color: var(--tertiary-color);
+    font-family: var(--font-family-medium);
+    font-size: 1.2rem;
+}
+
+.list__title-container span{
+    color: #868c9a;
+}
+
+.sorteo__list ul{
     padding: 2rem;
     
 }
@@ -316,7 +341,7 @@ footer{
 
 @media (max-width: 768px) {
 
-  .footer__container p{
+  .footer-container p{
     font-size: 0.7rem;
   }
 }
