@@ -11,10 +11,11 @@ export function aleatorio(lista){
 
 // Sorte el ganador o los ganadores.
 export function sortear(lista, cantidad){
-    
+    console.log(cantidad);
     if( (cantidad <= 0) || (cantidad === null)|| (cantidad > 10) ){
         mostrarMensaje("informacion", 'La cantidad de ganadores es invalida. Min: 1 Max: 10.');
         throw new Error("La cantidad de ganadores es invalida.");
+
     } 
     
 
@@ -23,7 +24,9 @@ export function sortear(lista, cantidad){
 
         // Deshabilita el botón Agregar.
         document.getElementById('btn-agregar').disabled  = true;
-
+        // Deshabilita el botón Sortear.
+        document.getElementById('btn-sortear').disabled = true;
+        
         // Guarda indices únicos.
         const indices = new Set();
 
@@ -44,8 +47,10 @@ export function sortear(lista, cantidad){
         document.getElementById('btn-sortear').disabled = true;
 
     }else{
-
+        
         mostrarMensaje("informacion", `La cantidad de ganadores no puede ser mayor a la cantida de nombres en la lista`);
+        
+
         
     };
 

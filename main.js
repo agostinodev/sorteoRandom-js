@@ -46,7 +46,6 @@ function initApp(){
         console.log(cantidaGanadores)
         aleatorio(lista);
         sortear(lista, cantidaGanadores);
-        $btnSortear.disabled = true;
 
     });
 
