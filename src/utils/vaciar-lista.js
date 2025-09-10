@@ -16,8 +16,11 @@ export function vaciarLista( lista ){
     // Limpia el textTarea.
     document.getElementById('textarea-nombres').value = '';
 
-    // Limpia la lista de nombres
+    // Limpia la lista de nombres.
     lista.length = 0;
+
+    //Deshabilita el botón Agregar.
+    document.getElementById('btn-agregar').disabled = false;
 
     mostrarMensaje("listaVacia", 'La lista esta vacia.');
 

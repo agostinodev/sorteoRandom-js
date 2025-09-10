@@ -29,8 +29,6 @@ function initApp(){
     $btnAgregar.addEventListener('click', ()=> {
       
         agregarNombre(lista);
-        document.getElementById('textarea-nombres').value = '';
-    
     });
 
     // Botón para vaciar la lista.
@@ -38,12 +36,12 @@ function initApp(){
 
         vaciarLista(lista);
         mostrarLista(lista);
-        $btnAgregar.disabled = false;
+        
     });
 
     //Botón para realizar el sorteo.
     $btnSortear.addEventListener('click', () => {
-        console.log(cantidaGanadores)
+        
         aleatorio(lista);
         sortear(lista, cantidaGanadores);
 

@@ -30,7 +30,13 @@ export function agregarNombre ( lista ) {
         const $btnSortear = document.getElementById('btn-sortear');
         $btnSortear.disabled = false;
 
+        // Limpia el textarea
+        document.getElementById('textarea-nombres').value = '';
+
+
         return lista;
     }
+
+    
     
 }
