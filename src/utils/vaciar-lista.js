@@ -21,7 +21,8 @@ export function vaciarLista( lista ){
 
     //Deshabilita el botón Agregar.
     document.getElementById('btn-agregar').disabled = false;
-
+    document.getElementById('btn-sortear').disabled= true;
+    
     mostrarMensaje("listaVacia", 'La lista esta vacia.');
 
     return lista;

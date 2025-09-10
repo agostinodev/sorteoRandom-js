@@ -41,7 +41,7 @@ function initApp(){
 
     //Botón para realizar el sorteo.
     $btnSortear.addEventListener('click', () => {
-        
+
         aleatorio(lista);
         sortear(lista, cantidaGanadores);
 
