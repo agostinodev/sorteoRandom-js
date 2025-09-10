@@ -18,7 +18,7 @@ export function mostrarLista(lista) {
         $listaContainer.innerHTML = `
              <div class="list__title-container">
                     <h2>Lista</h2>
-                    <span>${lista.length}</span>
+                    <span><i class="fa-solid fa-user fa-xs"></i> ${lista.length}</span>
                 </div>
                 <ul class="list"></ul>
         `;

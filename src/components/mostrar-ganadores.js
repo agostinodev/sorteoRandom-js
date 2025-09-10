@@ -30,7 +30,7 @@ export function mostrarGanadores(listaGanadores) {
     listaGanadores.forEach((el, i) => {
 
         const $liGanador = document.createElement('li');
-        $liGanador.innerHTML = `<span>Ganador ${i + 1}:</span> ${el}`;
+        $liGanador.innerHTML = `<i class="fa-solid fa-medal fa-xs"></i> <span>Ganador ${i + 1}:</span> ${el}`;
         $fragment.appendChild($liGanador);
 
     });
