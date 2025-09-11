@@ -26,8 +26,8 @@ function initApp(){
    
     // Botón para agregar un nombre la lista.
     $btnAgregar.addEventListener('click', ()=> {
-      
         agregarNombre(lista);
+
     });
 
     // Botón para vaciar la lista.
@@ -38,6 +38,7 @@ function initApp(){
         
     });
 
+
     //Botón para realizar el sorteo.
     $btnSortear.addEventListener('click', () => {
 
@@ -45,6 +46,7 @@ function initApp(){
         sortear(lista, cantidadGanadores);
 
     });
+
 
 }
 

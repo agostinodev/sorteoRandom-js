@@ -13,12 +13,7 @@ export function mostrarLista(lista) {
         
         const $listaContenedor = document.createElement('div');
         $listaContenedor.classList.add('lista__contenedor');
-        $listaContenedor.classList.add('lista__contenedor-animacion');
-
-        if(lista.length > 1){
-            $listaContenedor.classList.remove('lista__contenedor-animacion')
-        }
-
+     
         
 
         $listaContenedor.innerHTML = `
@@ -45,6 +40,9 @@ export function mostrarLista(lista) {
 
         document.querySelector('.lista__items').appendChild($fragment);  
 
+        
+
     }
+
 
 }

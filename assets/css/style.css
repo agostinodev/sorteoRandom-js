@@ -99,23 +99,6 @@ html {
     }
 }
 
-@keyframes aparecerAbajo {
-    0% {
-        transform: translateY(100%);
-        opacity: 0;
-    }
-    60% {
-        transform: translateY(10%);
-        opacity: 1;
-    }
- 
-    100% {
-        transform: translateY(0);
-    }
-}
-
-
-
 
 body{
     display: grid;
@@ -241,14 +224,11 @@ label{
   opacity: 0.5;
   pointer-events: none;
 }
-
-
 /* ---- FIN SECCIÓN SORTEO ---- */
 
 
 
 /* ---- SECCIÓN MENSAJES ---- */
-
 .mensajes{
     border-radius: 8px;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
@@ -270,7 +250,6 @@ label{
 
 }
 
-
 .ganadores {
     transform: translateX(-100%);
     animation: aparecer 1.2s ease-out forwards;
@@ -289,12 +268,10 @@ label{
     border-bottom: 1px solid #868c9a;
 }
 
-
 .ganadores__titulo{
     font-family: var(--font-family-medium);
     font-size: 1rem;
 }
-
 
 .ganadores__titulo span{
     color: var(--tertiary-color);
@@ -327,13 +304,8 @@ label{
     border-radius: 8px;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
     padding: 1.5rem;
-
 }
 
-.lista__contenedor-animacion{
-    transform: translateY(100%);
-    animation: aparecerAbajo 1.2s ease-out forwards; 
-}
 
 
 .lista__encabezado{
@@ -356,10 +328,19 @@ label{
     color: #868c9a;
 }
 
-.lista__items {
-    padding: 2rem;
-    
+
+
+.lista__items{
+    padding: 2rem; 
 }
+
+
+
+
+
+
+
+
 /* ---- FIN SECCIÓN LISTA ---- */
 /* ---- FIN MAIN ---- */
 
