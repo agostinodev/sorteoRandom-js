@@ -1,4 +1,4 @@
-import { mostrarMensaje, mostrarGanadores } from './index.js';
+import { mostrarGanadores, mostrarAlertas } from './index.js';
 
 
 
@@ -14,7 +14,7 @@ export function sortear(lista, cantidad){
 
 
     if( (cantidad <= 0) || (cantidad === null)|| (cantidad > 10) ){
-        mostrarMensaje("informacion", 'La cantidad de ganadores es invalida. Min: 1 Max: 10.');
+        mostrarAlertas("informacion", 'La cantidad de ganadores es invalida. Min: 1 Max: 10.');
         throw new Error("La cantidad de ganadores es invalida.");
 
     } 
@@ -49,7 +49,7 @@ export function sortear(lista, cantidad){
 
     }else{
         
-        mostrarMensaje("informacion", `No puede haber más ganadores que nombres en la lista.`);
+        mostrarAlertas("informacion", `No puede haber más ganadores que nombres en la lista.`);
     
     };
 

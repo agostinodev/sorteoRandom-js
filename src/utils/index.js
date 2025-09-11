@@ -3,5 +3,5 @@ export * from './validacion.js';
 export * from './vaciar-lista.js';
 export * from './sortear.js';
 export * from '../components/mostrar-lista.js';
-export * from '../components/mostrar-mensaje.js';
+export * from '../components/mostrar-alertas.js';
 export * from '../components/mostrar-ganadores.js'

@@ -19,35 +19,35 @@
 <body>
     <!-- Main -->
     <main class="main">
-        <div class="main__title-container">
-            <h1 class="main__title">Sorteo.<span class="main__title-gradient">Random()</span></h1>
+        <div class="main__encabezado">
+            <h1 class="main__titulo">Sorteo.<span class="main__titulo-gradiente">Random()</span></h1>
         </div>
         <!-- Sección Sorteo -->
-        <section class="sorteo__container">
+        <section class="sorteo">
             <!-- Contenedor Input -->
-            <div class="sorteo__input-container">
-                <label for="input-ganadores"><i class="fa-solid fa-trophy fa-xs"></i> Ganadores: </label>
-                <input id="input-ganadores" type="number" min="1" max="10" value="1">
+            <div class="sorteo__input">
+                <label for="input__ganadores"><i class="fa-solid fa-trophy fa-xs"></i> Ganadores: </label>
+                <input id="input__ganadores" type="number" min="1" max="10" value="1">
             </div>
             <!-- Contenedor TextTarea -->
             <div>
-                <textarea  id="textarea-nombres" rows="10" class="sorteo__textarea" placeholder="Escriba una lista de nombres"></textarea>
+                <textarea  id="textarea__nombres" rows="10" class="sorteo__textarea" placeholder="Escriba una lista de nombres"></textarea>
             </div>
             <!-- Contenedor Botones -->
-            <div class="sorteo__btn-container">
+            <div class="sorteo__btns">
                 <button id="btn-agregar" class="sorteo__btn">Agregar</button>
                 <button id="btn-vaciarLista" class="sorteo__btn">Vaciar lista</button>
                 <button id="btn-sortear" class="sorteo__btn" disabled>Sortear</button>
             </div>
         </section>
-        <!-- Sección Mostra mensaje -->
-        <section id="mensaje-container">
-            <!-- <div class="ganadores-container">
-                <div class="ganadores__date-container">
-                    <h2 class="ganadores__title">Sorteo.<span>Random()</span></h2>
-                    <p class="ganadores__date">Fecha: 08/09/25 08:30 pm</p>
+        <!-- Sección Mostra alertas -->
+        <section id="alertas">
+            <!-- <div class="ganadores">
+                <div class="ganadores__encabezado">
+                    <h2 class="ganadores__titulo">Sorteo.<span>Random()</span></h2>
+                    <p class="ganadores__fecha">Fecha: 08/09/25 08:30 pm</p>
                 </div>
-                <ul class="ganadores__list">
+                <ul class="ganadores__lista">
                     <li>Ganador 1: nico</li>
                     <li>Ganador 2: fede</li>
                     <li>Ganador 3: macha</li>
@@ -55,13 +55,13 @@
             </div> -->
         </section>
         <!-- Sección Mostrar lista -->
-        <section id="sorteo__list-container">
-            <!-- <div class="list-container">
-                <div class="list__title-container">
-                    <h2>Lista</h2>
-                    <span>0</span>
+        <section id="lista">
+            <!-- <div class="lista__contenedor">
+                <div class="lista__encabezado">
+                    <h2 class="lista__titulo">Lista</h2>
+                    <span class"lista__contador"">0</span>
                 </div>
-                <ul>
+                <ul class"lista__items">
                     <li>nombre 1</li>
                     <li>nombre 2</li>
                     <li>nombre 3</li>
@@ -72,9 +72,9 @@
         </section>
     </main>
     <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <p>© 2025 Agostino Dev. Todos los derechos reservados. | Hecho con <span class="footer__span">❤</span> por Agostino Dev.</p>
+    <footer class="footer">
+        <div class="footer__contenedor">
+            <p class="footer__texto">© 2025 Agostino Dev. Todos los derechos reservados. | Hecho con <span class="footer__span">❤</span> por Agostino Dev.</p>
         </div>
     </footer>
     <script type="module" src="/main.js"></script>

@@ -1,29 +1,22 @@
-import { mostrarMensaje } from './index.js';
+import { mostrarAlertas } from './index.js';
 
 
 // Limpia la lista y la lista en el html.
 export function vaciarLista( lista ){
 
-    // Limpia la lista en el HTMl.
-    const $mensajeContainer = document.getElementById('mensaje-container');
-    $mensajeContainer.textContent = '';
-    $mensajeContainer.classList.remove('sorteo__mensaje')
     
-    // Elimina la clase que le da estilo a la lista.
-    const $sorteoListaContainer = document.getElementById('sorteo__list-container')
-    $sorteoListaContainer.classList.remove('sorteo__list');
-
     // Limpia el textTarea.
-    document.getElementById('textarea-nombres').value = '';
+    document.getElementById('textarea__nombres').value = '';
 
-    // Limpia la lista de nombres.
+    // Limpia la lista de nombres y en el html.
     lista.length = 0;
 
     //Deshabilita el botón Agregar.
     document.getElementById('btn-agregar').disabled = false;
+    //Deshabilita el botón Sortear.
     document.getElementById('btn-sortear').disabled= true;
     
-    mostrarMensaje("listaVacia", 'La lista esta vacia.');
+    mostrarAlertas("listaVacia", 'La lista esta vacia.');
 
     return lista;
 

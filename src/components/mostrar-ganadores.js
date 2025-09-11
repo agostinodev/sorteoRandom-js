@@ -2,25 +2,25 @@
 export function mostrarGanadores(listaGanadores) {
     
     //Limpia el contenedor mensaje
-    const $mensajeContainer = document.getElementById('mensaje-container');
-    $mensajeContainer.textContent = '';
-    $mensajeContainer.className = '';
+    const $alertas = document.getElementById('alertas');
+    $alertas.textContent = '';
+    $alertas.className = '';
 
     
     //Fecha y hora del sorteo
     const fecha = new Date().toLocaleString();
 
-    const $ganadoresContainer = document.createElement('div');
-    $ganadoresContainer.classList.add('ganadores-container');
-    $ganadoresContainer.innerHTML = `
-        <div class="ganadores__date-container">
-            <p class="ganadores__title">Sorteo.<span>Random()</span></p>
-            <p class="ganadores__date">Fecha: ${fecha}</p>
+    const $ganadores = document.createElement('div');
+    $ganadores.classList.add('ganadores');
+    $ganadores.innerHTML = `
+        <div class="ganadores__encabezado">
+            <p class="ganadores__titulo">Sorteo.<span>Random()</span></p>
+            <p class="ganadores__fecha">Fecha: ${fecha}</p>
         </div>
-        <ul class="ganadores__list"></ul>
+        <ul class="ganadores__lista"></ul>
     `;
 
-    $mensajeContainer.appendChild($ganadoresContainer);
+    $alertas.appendChild($ganadores);
 
 
     const $fragment = document.createDocumentFragment();
@@ -28,12 +28,12 @@ export function mostrarGanadores(listaGanadores) {
     // Mustra los ganadores en el html
     listaGanadores.forEach((el, i) => {
 
-        const $liGanador = document.createElement('li');
-        $liGanador.innerHTML = `<i class="fa-solid fa-medal fa-xs"></i> <span>Ganador ${i + 1}:</span> ${el}`;
-        $fragment.appendChild($liGanador);
+        const $ganadorItem = document.createElement('li');
+        $ganadorItem.innerHTML = `<i class="fa-solid fa-medal fa-xs"></i> <span>Ganador ${i + 1}:</span> ${el}`;
+        $fragment.appendChild($ganadorItem);
 
     });
 
-    document.querySelector('.ganadores__list').appendChild($fragment);
+    document.querySelector('.ganadores__lista').appendChild($fragment);
 
 }

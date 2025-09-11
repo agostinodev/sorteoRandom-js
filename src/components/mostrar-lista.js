@@ -3,27 +3,33 @@
 // Actualiza la lista en el Html.
 export function mostrarLista(lista) {
 
-    const $sorteoListaContainer = document.getElementById('sorteo__list-container');
+    const $lista= document.getElementById('lista');
 
     // limpiar antes de volver a renderizar.
-    $sorteoListaContainer.innerHTML = '';
+    $lista.innerHTML = '';
 
     // Si la lista tiene un nombre o más, la genera en el html.
     if(lista.length >= 1){
         
-        $sorteoListaContainer.classList.add('sorteo__list');
+        const $listaContenedor = document.createElement('div');
+        $listaContenedor.classList.add('lista__contenedor');
+        $listaContenedor.classList.add('lista__contenedor-animacion');
 
-        const $listaContainer = document.createElement('div');
-        $listaContainer.classList.add('list-container');
-        $listaContainer.innerHTML = `
-             <div class="list__title-container">
-                    <h2>Lista</h2>
-                    <span><i class="fa-solid fa-user fa-xs"></i> ${lista.length}</span>
+        if(lista.length > 1){
+            $listaContenedor.classList.remove('lista__contenedor-animacion')
+        }
+
+        
+
+        $listaContenedor.innerHTML = `
+             <div class="lista__encabezado">
+                    <h2 class="lista__titulo">Lista</h2>
+                    <span class="lista__contador"><i class="fa-solid fa-user fa-xs"></i> ${lista.length}</span>
                 </div>
-                <ul class="list"></ul>
+                <ul class="lista__items"></ul>
         `;
 
-        $sorteoListaContainer.appendChild($listaContainer);
+        $lista.appendChild($listaContenedor);
 
      
         const $fragment = document.createDocumentFragment();
@@ -32,12 +38,12 @@ export function mostrarLista(lista) {
         // Genera los li de la ul.
         lista.forEach(el => {
             
-            const $li = document.createElement("li");
-            $li.textContent = el;
-            $fragment.appendChild($li);
+            const $listaItem = document.createElement("li");
+            $listaItem.textContent = el;
+            $fragment.appendChild($listaItem);
         });
 
-        document.querySelector('.list').appendChild($fragment);  
+        document.querySelector('.lista__items').appendChild($fragment);  
 
     }
 

@@ -1,14 +1,14 @@
-import { validarLista, mostrarLista, mostrarMensaje } from './index.js';
+import { validarLista, mostrarLista, mostrarAlertas } from './index.js';
 
 
 // Agregar los nombres a la lista.
 export function agregarNombre ( lista ) {
 
-    const $textTarea = document.getElementById('textarea-nombres').value;
+    const $textareaNombres = document.getElementById('textarea__nombres').value;
     
 
     //El string que recibe de textarea lo pasa a un arreglo, tomando "\n" y "," para separar las palabras.
-    const nombres = $textTarea.split(/[\n,]+/).map(el => el.trim()).filter(Boolean);
+    const nombres = $textareaNombres.split(/[\n,]+/).map(el => el.trim()).filter(Boolean);
     
 
     // Si el nombre es valido lo agrega a la lista y lo agrega a la lista del html.
@@ -16,22 +16,22 @@ export function agregarNombre ( lista ) {
 
         // Valida que no haya nombres repetidos en la lista.
         if(nombres.some( el => lista.includes(el))){
-            return mostrarMensaje("informacion", 'El nombre ya está en la lista. No pueden haber nombres repetidos.');
+            return mostrarAlertas("informacion", 'El nombre ya está en la lista. No pueden haber nombres repetidos.');
         }
         
 
         lista.push(...nombres);
-        console.log(lista)
+
 
         mostrarLista(lista);
-        mostrarMensaje("listaAgregada",'Lista agregada.');
+        mostrarAlertas("listaAgregada",'Lista agregada.');
 
 
         const $btnSortear = document.getElementById('btn-sortear');
         $btnSortear.disabled = false;
 
         // Limpia el textarea
-        document.getElementById('textarea-nombres').value = '';
+        document.getElementById('textarea__nombres').value = '';
 
 
         return lista;
