@@ -6,13 +6,12 @@ export function mostrarGanadores(listaGanadores) {
     $mensajeContainer.textContent = '';
     $mensajeContainer.className = '';
 
-
-    $mensajeContainer.classList.add('mensaje-ganadores');
     
     //Fecha y hora del sorteo
     const fecha = new Date().toLocaleString();
 
     const $ganadoresContainer = document.createElement('div');
+    $ganadoresContainer.classList.add('ganadores-container');
     $ganadoresContainer.innerHTML = `
         <div class="ganadores__date-container">
             <p class="ganadores__title">Sorteo.<span>Random()</span></p>

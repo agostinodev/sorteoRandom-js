@@ -57,7 +57,47 @@ html {
     --font-family-bold: 'OpenSans-Bold';
 }
 
+/* ---- ANIMACIONES ---- */
+@keyframes caer {
+  0% {
+    transform: translateY(-120px) rotate(-12deg);
+  }
+  30% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-25px) rotate(-6deg); 
+  }
+  65% {
+    transform: translateY(12px) rotate(5deg);
+  }
+  80% {
+    transform: translateY(-8px) rotate(-3deg); 
+  }
+  95% {
+    transform: translateY(10px) rotate(6deg);
+  }
+  100% {
+    transform: translateY(14px) rotate(11deg); 
+  }
+}
 
+@keyframes aparecer {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    60% {
+        transform: translateX(10%);
+        opacity: 1;
+    }
+    80% {
+        transform: translateX(-5%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
 
 
 
@@ -94,7 +134,7 @@ body{
 .main__title{
     font-size: 2rem;
     font-family: var(--font-family-bold);
-    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.12);
     
 
 }
@@ -102,25 +142,10 @@ body{
 .main__title-gradient{
     display: inline-block;
     color: var(--tertiary-color);
-    background-clip: text;
     font-family: 'OpenSans-Bold';
-    text-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
     transform: translateY(0) rotate(0deg);
-    animation: caer 2s ease forwards;
+    animation: caer 2s linear forwards;
 }
-
-/* ANIMACIÓN TITULO */
-@keyframes caer {
-  100% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(13px) rotate(10deg);
-    opacity: 1;
-  }
-}
-
 
 .sorteo__container{
     border-radius: 8px;
@@ -195,7 +220,6 @@ label{
 }
 
 
-
 [disabled] {
   opacity: 0.5;
   pointer-events: none;
@@ -207,6 +231,16 @@ label{
 
 
 /* ---- SECCIÓN MENSAJES ---- */
+
+.ganadores-container {
+    transform: translateX(-100%);
+    animation: aparecer 1.2s ease-out forwards;
+    background-color: #FADA7A;
+    border-radius: 8px;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem; 
+}
+
 .mensaje-informacion{
     background-color: #A6AEBF;
     border-radius: 8px;
@@ -223,13 +257,6 @@ label{
 
 .mensaje-listaVacia{
     background-color: #9FB3DF;
-    border-radius: 8px;
-    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
-    padding: 1.5rem; 
-}
-
-.mensaje-ganadores{
-    background-color: #FADA7A;
     border-radius: 8px;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
     padding: 1.5rem; 
@@ -296,7 +323,6 @@ label{
     padding: 4px;
 
 }
-
 
 
 .list__title-container h2{

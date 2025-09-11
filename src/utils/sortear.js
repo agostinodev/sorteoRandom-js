@@ -49,7 +49,7 @@ export function sortear(lista, cantidad){
 
     }else{
         
-        mostrarMensaje("informacion", `La cantidad de ganadores no puede ser mayor a la cantida de nombres en la lista`);
+        mostrarMensaje("informacion", `No puede haber más ganadores que nombres en la lista.`);
     
     };
 
