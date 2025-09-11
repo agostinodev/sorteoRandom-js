@@ -22,7 +22,6 @@ function initApp(){
     $inputGanadores.addEventListener('input', ()=>{
 
         cantidadGanadores = Number($inputGanadores.value);
-
     })
    
     // Botón para agregar un nombre la lista.
